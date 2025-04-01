@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+:root {
+    --fisrt-color: #006ce8;
+    --second-color: #FFFFFF;
+    --thirt-color: #89BBFE;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../imagens/background-photo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.content {
+    width: 200%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    transition: transform .6s ease-in-out;
+}
+/* Configurações class .active */
+
+.active {
+    transform: translateX(-50%);    
+}
+
+/* Configurações mensagem de error */
+
+/* Configurações form de cadastro */
+
+.cadastro {
+    height: 600px;
+    width: 600px;
+    padding: 1em;
+    border-radius: 15px;
+    
+    background-color: var(--second-color);
+}
+
+.cadastro > h1 {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.cadastro > form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.cadastro > form > p {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cadastro > form > p > a {
+    text-decoration: none;
+    font-weight: bold;
+
+    color: var(--fisrt-color);
+}
+
+.cadastro > form > button {
+    padding: .3em;
+    font-size: 1.7em;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    background-color: var(--fisrt-color);
+    color: var(--second-color);
+}
+
+.cadastro > form > button:hover {
+    transition: .8s;
+
+    background-color: var(--thirt-color);
+}
+
+/* Configurações form de login */
+
+.login {
+    height: 600px;
+    width: 600px;
+    padding: 1em;
+    border-radius: 15px;
+    
+    background-color: var(--second-color);
+}
+
+.login > h1 {
+    font-size: 3.5em;
+    text-align: center;
+}
+
+.login > form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.login > form > p {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.login > form > p > a {
+    text-decoration: none;
+    font-weight: bold;
+
+    color: var(--fisrt-color);
+}
+
+.login > form > button {
+    padding: .3em;
+    font-size: 1.7em;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    background-color: var(--fisrt-color);
+    color: var(--second-color);
+}
+
+.login > form > button:hover {
+    transition: .8s;
+
+    background-color: var(--thirt-color);
+}
+
+/* Configurações input moderno */
+
+.row {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.row > input {
+    padding: .4em;
+    font-size: 1.7em;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+.row > label {
+    position: absolute;
+    font-size: 1.4em;
+    left: 15px;
+    top: 30%;
+    transform: translateY(-100%);
+    padding: .2em;
+
+    background-color: var(--second-color);
+    color: var(--fisrt-color);
+}
+
+.row > input:focus {
+    border: 2px solid var(--fisrt-color);
+}   
+
+/* Configurações spin button */
+
+#load_cadastro {
+    display: none;
+}
+
+#load_login {
+    display: none;
+}
+
+.load > button {
+    width: 100%;
+    border-radius: 20px;
+    padding: .2em;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+
+    background-color: var(--fisrt-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load > button > .spin {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    border: 2px solid var(--second-color);
+    border-bottom-color: transparent;
+
+    animation: spin .6s ease-in-out infinite;
+}
+
+/* Configurações keyframe spin button */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}

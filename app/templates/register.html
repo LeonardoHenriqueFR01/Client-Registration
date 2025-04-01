@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/css/register.css">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="content" id="content">
+
+            <section class="cadastro" id="cadastro">
+
+                <h1>Cadastro</h1>
+
+                <form action="/get_user_cadastro" method="POST" autocomplete="off">
+
+                    <div class="row">
+                        <input type="text" name="name" id="name" required minlength="3" placeholder=" ">
+                        <label for="name">Seu nome</label>
+                    </div>
+                    
+                    <div class="row">
+                        <input type="email" name="email" id="email" required minlength="12" placeholder=" ">
+                        <label for="email">Seu email</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="password" name="password" id="password" required minlength="8" placeholder=" ">
+                        <label for="password">Sua senha</label>
+                    </div>
+
+                    <p>Já tem uma conta? <a href="#" onclick="toggleForms()">LOGIN</a></p>
+
+                    <button id="btn_cadastro">Cadastro</button>
+
+                    <div class="load" id="load_cadastro">
+
+                        <button>
+
+                            <div class="spin"></div>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section class="login" id="login">
+
+                <h1>Login</h1>
+
+                <form action="/get_user_login" method="POST" autocomplete="off">
+
+                    <div class="row">
+                        <input type="text" name="name_login" id="name_login" required minlength="3" placeholder=" ">
+                        <label for="name_login">Seu nome</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="email" name="email_login" id="email_login" required minlength="12" placeholder=" ">
+                        <label for="email_login">Seu email</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="password" name="password_login" id="password_login" required minlength="8" placeholder=" ">
+                        <label for="password_login">Sua senha</label> 
+                    </div>
+
+                    <p>Não tem uma conta? <a href="#" onclick="toggleForms()">CADASTRO</a></p>
+
+                    <button id="btn_login">Login</button>
+
+                    <div class="load" id="load_login">
+
+                        <button>
+
+                            <div class="spin"></div>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+    
+    <script src="../static/js/register.js"></script>
+
+</body>
+
+</html>

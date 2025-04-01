@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+:root {
+    --fisrt-color: #006ce8;
+    --second-color: #FFFFFF;
+    --thirt-color: #89BBFE;
+}
+
+/* Configurações header */
+
+header {
+    padding: .7em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: #000000;
+}
+
+/* Header Logo */
+
+header > .logo {
+    display: flex;
+    align-items: center;
+}
+
+header > .logo > img {
+    width: 40px;
+    margin-right: 7px;
+}
+
+header > .logo > h1 {
+    font-size: 2em;
+
+    color: var(--second-color);
+}
+
+/* Header Links */
+
+header > .links {
+    width: 200px;
+}
+
+header > .links > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header > .links > ul > li {
+    list-style: none;
+}   
+
+header > .links > ul > li > a {
+    text-decoration: none;
+    font-size: 1.7em;
+
+    color: var(--second-color);
+}
+
+header > .links > ul > li > a:hover {
+    transition: .7s;
+
+    color: var(--thirt-color);
+}
+
+/* Header Buttons */
+
+header > .btn_log > a > button {
+    width: 100px;
+    padding: .5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+header > .btn_log > a > .btn_cadastro {
+    background-color: var(--fisrt-color);
+    color: var(--second-color);
+}
+
+header > .btn_log > a > .btn_cadastro:hover {
+    transition: .8s;
+
+    background-color: var(--thirt-color);
+}
+
+header > .btn_log > a > .btn_login {
+    background-color: transparent;
+    color: var(--fisrt-color);
+}
+
+header > .btn_log > a > .btn_login:hover {
+    transition: .8s;
+
+    background-color: var(--fisrt-color);
+    color: var(--second-color);
+}
+
+/* Section .Home */
+
+main > .home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../imagens/background-photo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+main > .home > article {
+    padding: 1em;
+    border-radius: 15px;
+    max-width: 800px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 15px var(--fisrt-color);
+
+    animation: shadow 1s ease-in-out infinite alternate;
+}
+
+main > .home > article > h1 {
+    font-size: 2.5em;
+    text-align: center;
+
+    color: var(--fisrt-color);
+}
+
+main > .home > article > p {
+    font-size: 1.8em;
+    text-align: justify;
+}
+
+/* Section .home button */
+
+main > .home > article > nav {
+    text-align: center;
+}
+
+main > .home > article > nav > a > button {
+    width: 130px;
+    padding: .5em;
+    font-size: 1.7em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background-color: var(--fisrt-color);
+    color: var(--second-color);
+}
+
+main > .home > article > nav > a > button:hover {
+    transition: .8s;
+
+    background-color: var(--thirt-color);
+}
+
+/* Keyframe box-shadow .home */
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0px 0px 0px var(--second-color);
+    }
+
+    50% {
+        box-shadow: 0px 0px 15px var(--fisrt-color);
+    }
+
+}
