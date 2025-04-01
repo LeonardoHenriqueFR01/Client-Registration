@@ -1,2 +1,42 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+
+# Environment variables
+.env
+*.env
+
+# Flask instance and database files
+instance/
+*.sqlite3
+*.db
+
+# Logs and debug files
+logs/
+*.log
+
+# Pytest and coverage reports
+.coverage
+htmlcov/
+.cache/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS system files
+.DS_Store
+
+# Pip dependency files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
