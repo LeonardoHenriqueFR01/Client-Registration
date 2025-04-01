@@ -16,7 +16,7 @@ Este é um sistema de gerenciamento de clientes desenvolvido com Flask. Ele perm
 
 ## 📂 Estrutura do Projeto
 ```
-/Projeto-Flask
+/app
 │-- main.py
 │-- __init.py__
 │-- requirements.txt
