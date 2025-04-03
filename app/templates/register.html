@@ -41,6 +41,12 @@
 
                     <p>Já tem uma conta? <a href="#" onclick="toggleForms()">LOGIN</a></p>
 
+                    {% if error_cadastro %}
+                        <div class="error">
+                            <p>{{ error_cadastro }}</p>
+                        </div>
+                    {% endif %}
+
                     <button id="btn_cadastro" onclick="get_spin_cadastro()">Cadastro</button>
 
                     <div class="load" id="load_cadastro">
@@ -79,6 +85,12 @@
                     </div>
 
                     <p>Não tem uma conta? <a href="#" onclick="toggleForms()">CADASTRO</a></p>
+
+                    {% if error_login %}
+                        <div class="error">
+                            <p>{{ error_login }}</p>
+                        </div>
+                    {% endif %}
 
                     <button id="btn_login" onclick="get_spin_login()">Login</button>
 

@@ -47,6 +47,19 @@ body {
 
 /* Configurações mensagem de error */
 
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error > p {
+    font-size: 1.5em;
+    margin-top: 10px;
+
+    color: red;
+}
+
 /* Configurações form de cadastro */
 
 .cadastro {
