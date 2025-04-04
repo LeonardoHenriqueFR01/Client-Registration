@@ -15,17 +15,17 @@ function get_spin_cadastro() {
     if (name.length < 3) {
         alert('O nome deve ter no mínimo 3 caracteres!');
         return;
-    };
+    }
 
     if (email.length < 12) {
         alert('O email deve ter no mínimo 12 caracteres!')
         return;
-    };
+    }
 
     if (password.length < 8) {
         alert('A senha deve ter no mínimo 8 caracteres!');
         return;
-    };
+    }
 
     // Caso nehuma das opções a cima aconteça
     btn_cadastro.style.display = 'none'
@@ -45,17 +45,17 @@ function get_spin_login() {
     if (name.length < 3) {
         alert('O nome deve ter no mínimo 3 caracteres!');
         return;
-    };
+    }
 
     if (email.length < 12) {
         alert('O email deve ter no mínimo 12 caracteres!')
         return;
-    };
+    }
 
     if (password.length < 8) {
         alert('A senha deve ter no mínimo 8 caracteres!');
         return;
-    };
+    }
 
     // Caso nehuma das opções a cima aconteça
     btn_login.style.display = 'none'

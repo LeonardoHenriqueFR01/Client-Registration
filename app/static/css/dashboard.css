@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+:root {
+    --fisrt-color: #006ce8;
+    --second-color: #FFFFFF;
+    --thirt-color: #89BBFE;
+    --room-color: #04af04;
+    --five-color: #90ee90;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../imagens/background-dashboard.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    height: 700px;
+    width: 900px;
+    overflow: hidden;
+}
+
+.content {
+    width: 200%;
+    display: flex;
+    justify-content: space-around;
+
+    transition: .8s ease-in-out;
+}
+
+/* Configurações class .active */
+
+.active {
+    transform: translateX(-50%);
+}
+
+/* Configurações form avista */
+
+.avista {
+    height: 700px;
+    width: 700px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: var(--second-color);
+}
+
+.avista > h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.avista > form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.avista > form > p {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.avista > form > p > a {
+    text-decoration: none;
+    font-weight: 500;
+
+    color: var(--fisrt-color);
+}
+
+.avista > form > button {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .5em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#btn_avista {
+    margin-top: 50px;
+
+    color: var(--second-color);
+    background-color: var(--fisrt-color);
+}
+
+#btn_avista:hover {
+    transition: .8s ease-in-out;
+    
+    background-color: var(--thirt-color);
+}
+
+.avista > .view_clientes {
+    width: 100%;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .5em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    color: var(--second-color);
+    background-color: var(--room-color);
+}
+
+.avista > .view_clientes:hover {
+    transition: .8s ease-in-out;
+
+    background-color: var(--five-color);
+}
+
+/* Configurações form financiamento */
+
+.financia {
+    height: 700px;
+    width: 700px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: var(--second-color);
+}
+
+.financia > h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+.financia > form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.financia > form > p {
+    font-size: 1.7em;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.financia > form > p > a {
+    text-decoration: none;
+    font-weight: 500;
+
+    color: var(--fisrt-color);
+}
+
+.financia > form > button {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .5em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#btn_financia {
+    margin-top: 50px;
+
+    color: var(--second-color);
+    background-color: var(--fisrt-color);
+}
+
+#btn_financia:hover {
+    transition: .8s ease-in-out;
+    
+    background-color: var(--thirt-color);
+}
+
+.financia > .view_clientes {
+    width: 100%;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .5em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    color: var(--second-color);
+    background-color: var(--room-color);
+}
+
+.financia > .view_clientes:hover {
+    transition: .8s ease-in-out;
+
+    background-color: var(--five-color);
+}
+
+/* Configurações input moderno */
+
+.row {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.row > input {
+    width: 100%;
+    font-size: 1.7em;
+    padding: .5em;
+    outline: none;
+    border-radius: 15px;
+}
+
+.row > label {
+    position: absolute;
+    font-size: 1.5em;
+    left: 15px;
+    top: 5%;
+    transform: translateY(-50%);
+    padding: .2em;
+
+    background-color: var(--second-color);
+    color: var(--fisrt-color);
+}
+
+.row > input:focus {
+    border: 2px solid var(--fisrt-color);
+}
+
+/* Configurações spin button */
+
+#load_avista {
+    display: none;
+}
+
+#load_financia {
+    display: none;
+}
+
+.load > button {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    background-color: var(--fisrt-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load > button > .spin {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    border: 2px solid var(--second-color);
+    border-bottom-color: transparent;
+
+    animation: spin .8s ease-in-out infinite;
+}
+
+/* Configurações keyframe spin button */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}

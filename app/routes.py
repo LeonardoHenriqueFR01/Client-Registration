@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, session, Blueprint
 from flask_login import login_required, current_user, login_user
 from app import db
-from .models import User
+from .models import User, Avista, Financia
 from werkzeug.security import generate_password_hash, check_password_hash
 from time import sleep
 
@@ -46,6 +46,8 @@ def get_user_cadastro():
             db.session.add(user)
             db.session.commit()
 
+            sleep(3)
+
             return redirect(url_for('main.dashboard'))
         
     return render_template('register.html')
@@ -63,10 +65,56 @@ def get_user_login():
         user_exists = User.query.filter((User.name == name) | (User.email == email)).first()
 
         if user_exists and check_password_hash(user_exists.password, password):
-            login_user(user_exists)J
+            login_user(user_exists)
+
+            sleep(3)
+
             return redirect(url_for('main.dashboard'))
         else:
             error_message = 'Dados inválidos!'
             return render_template('register.html', error_login=error_message)
         
     return render_template('register.html')
+
+# Rota para cadastrar um cliente avista
+@main.route('/get_user_avista', methods=['POST', 'GET'])
+@login_required
+def user_get_avista():
+    if request.method == 'POST':
+        name = request.form.get('name_avista')
+        name_vehicle = request.form.get('name_vehicle_avista')
+        value_vehicle = request.form.get('value_vehicle_avista')
+        value_prohibited = request.form.get('value_prohibited_avista')
+
+        new_info = Avista(name=name, name_vehicle=name_vehicle, value_vehicle=value_vehicle, value_prohibited=value_prohibited, user_id=current_user.id)
+        
+        db.session.add(new_info)
+        db.session.commit()
+
+        sleep(3)
+
+        return redirect(url_for('main.dashboard'))
+    
+    return render_template('dashboard.html')
+
+# Rota para cadastrar cliente financiamento
+@main.route('/get_user_financia', methods=['POST', 'GET'])
+@login_required
+def get_user_financia():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        name_vehicle = request.form.get('name_vehicle')
+        value_vehicle = request.form.get('name_vehicle')
+        value_prohibited = request.form.get('value_prohibeted')
+        installments = request.form.get('installments')
+
+        new_info = Financia(name=name, name_vehicle=name_vehicle, value_vehicle=value_vehicle, value_prohibited=value_prohibited, installments=installments, user_id=current_user.id)
+
+        db.session.add(new_info)
+        db.session.commit()
+
+        sleep(3)
+
+        return redirect(url_for('main.dashboard'))
+    
+    return render_template('dashboard.html')

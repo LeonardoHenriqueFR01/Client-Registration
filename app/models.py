@@ -21,7 +21,38 @@ class User(db.Model, UserMixin):
             'name':self.name,
             'email':self.email,
         }  
+
+    Avista = db.relationship('Avista', backref=('user'), lazy=True)
+    Financia = db.relationship('Financia', backref=('user'), lazy=True)
+
+
+class Avista(db.Model):
+    __tablename__ = 'avista'
     
+    id = db.Column(db.Integer, primary_key=True)
+    
+    name = db.Column(db.String(150), nullable=False)
+    name_vehicle = db.Column(db.String(150), nullable=False)
+    value_vehicle = db.Column(db.Float, nullable=False)
+    value_prohibited = db.Column(db.Float, nullable=False) 
+    
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
+class Financia(db.Model):
+    __tablename__ = 'financiamento'
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    name = db.Column(db.String(150), nullable=False)
+    name_vehicle = db.Column(db.String(150), nullable=False)
+    value_vehicle = db.Column(db.Float, nullable=False)
+    value_prohibited = db.Column(db.Float, nullable=False) 
+    installments = db.Column(db.Integer, nullable=False)
+    
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))

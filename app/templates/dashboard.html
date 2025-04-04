@@ -7,13 +7,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/css/dashboard.css">
 
 </head>
 
 <body>
 
-    <h1>OK</h1>
+    <div class="container">
+
+        <div class="content" id="content">
+
+            <div class="avista" id="avista">
+
+                <h1>Cliente</h1>
+                <h1>Avista</h1>
+
+                <form action="/get_user_avista" method="POST" autocomplete="off">
+
+                    <div class="row">
+                        <input type="text" name="name_avista" id="name_avista" required minlength="3" placeholder=" ">
+                        <label for="name_avista">Nome do Cliente</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="text" name="name_vehicle_avista" id="name_vehicle_avista" required minlength="3" placeholder=" ">
+                        <label for="name_vehicle_avista">Nome do Veiculo</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="number" name="value_vehicle_avista" id="value_vehicle_avista" required minlength="3" placeholder=" ">
+                        <label for="value_vehicle_avista">Valor do Veiculo</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="number" name="value_prohibited_avista" id="value_prohibited_avista" required minlength="3" placeholder=" ">
+                        <label for="value_prohibited_avista">Valor de Entrada</label>
+                    </div>
+
+                    <p>Deseja cadastrar um cliente de financiamento? <a href="#" onclick="toggleForms()">Clique aqui</a></p>
+
+                    <button id="btn_avista" onclick="get_spin_avista()">Cadastrar</button>
+
+                    <div class="load" id="load_avista">
+
+                        <button>
+                            <div class="spin"></div>
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <button class="view_clientes" id="view_clientes" onclick="get_view_clientes()">Ver Clientes</button>
+
+            </div>
+
+            <div class="financia" id="financia">
+
+                <h1>Cliente</h1>
+                <h1>Financiamento</h1>
+
+                <form action="/get_user_financia" method="POST" autocomplete="off">
+
+                    <div class="row">
+                        <input type="text" name="name" id="name" required minlength="3" placeholder=" ">
+                        <label for="name">Nome do Cliente</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="text" name="name_vehicle" id="name_vehicle" required minlength="3" placeholder=" ">
+                        <label for="name_vehicle">Nome do Veiculo</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="number" name="value_vehicle" id="value_vehicle" required minlength="3" placeholder=" ">
+                        <label for="value_vehicle">Valor do Veiculo</label>
+                    </div>
+
+                    <div class="row">
+                        <input type="number" name="value_prohibited" id="value_prohibited" required minlength="3" placeholder=" ">
+                        <label for="value_prohibited">Valor de Entrada</label>
+                    </div>
+
+                    <p>Deseja cadastrar um cliente avista? <a href="#" onclick="toggleForms()">Clique aqui</a></p>
+
+                    <button id="btn_financia" onclick="get_spin_financia()">Cadastrar</button>
+
+                    <div class="load" id="load_financia">
+
+                        <button>
+                            <div class="spin"></div>
+                        </button>
+
+                    </div>
+
+                </form>
+
+                <button class="view_clientes" id="view_clientes" onclick="get_view_clientes()">Ver Clientes</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/dashboard.js"></script>
     
 </body>
 
