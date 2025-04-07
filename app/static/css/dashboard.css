@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    height: 700px;
+   height: 900px;
     width: 900px;
     overflow: hidden;
 }
@@ -126,7 +126,7 @@ body {
 /* Configurações form financiamento */
 
 .financia {
-    height: 700px;
+    height: 800px;
     width: 700px;
     padding: 1em;
     border-radius: 15px;

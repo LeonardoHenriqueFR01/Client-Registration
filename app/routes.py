@@ -104,8 +104,8 @@ def get_user_financia():
     if request.method == 'POST':
         name = request.form.get('name')
         name_vehicle = request.form.get('name_vehicle')
-        value_vehicle = request.form.get('name_vehicle')
-        value_prohibited = request.form.get('value_prohibeted')
+        value_vehicle = request.form.get('value_vehicle')
+        value_prohibited = request.form.get('value_prohibited')
         installments = request.form.get('installments')
 
         new_info = Financia(name=name, name_vehicle=name_vehicle, value_vehicle=value_vehicle, value_prohibited=value_prohibited, installments=installments, user_id=current_user.id)
