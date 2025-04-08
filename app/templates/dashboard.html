@@ -59,7 +59,9 @@
 
                 </form>
 
-                <button class="view_clientes" id="view_clientes" onclick="get_view_clientes()">Ver Clientes</button>
+                <a href="{{ url_for('main.view_clientes') }}">
+                    <button class="view_clientes" id="view_clientes" onclick="get_view_clientes()">Ver Clientes</button>
+                </a>
 
             </div>
 

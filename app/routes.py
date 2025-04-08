@@ -20,8 +20,20 @@ def register():
 
 # Rota para página para cadastrar clientes
 @main.route('/dashboard')
+@login_required
 def dashboard():
     return render_template('dashboard.html')
+
+# Rota para página para ver os clientes cadastrados
+@main.route('/view_clientes')
+@login_required
+def view_clientes():
+    financia_users = Financia.query.filter_by(user_id=current_user.id).all()
+    avista_users = Avista.query.filter_by(user_id=current_user.id).all()
+
+    users = financia_users + avista_users
+
+    return render_template('view_users.html', users=users)
 
 # Rota para fazer cadastro
 @main.route('/get_user_cadastro', methods=['POST', 'GET'])

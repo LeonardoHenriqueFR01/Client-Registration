@@ -38,6 +38,19 @@ class Avista(db.Model):
     
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
+    def __repr__(self):
+        return f'<avista {self.name}, {self.email}>'
+    
+    def asdict(self):
+        return {
+            'id':self.id,
+            'name':self.name,
+            'name_vehicle':self.name_vehicle,
+            'value_vehicle':self.value_vehicle,
+            'value_prohibited':self.value_prohibited,
+            'user_id':self.user_id
+        }
+
 
 class Financia(db.Model):
     __tablename__ = 'financiamento'
@@ -51,6 +64,20 @@ class Financia(db.Model):
     installments = db.Column(db.Integer, nullable=False)
     
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    def __repr__(self):
+        return f'<financia {self.name}, {self.email}>'
+    
+    def asdict(self):
+        return {
+            'id':self.id,
+            'name':self.name,
+            'name_vehicle':self.name_vehicle,
+            'value_vehicle':self.value_vehicle,
+            'value_prohibited':self.value_prohibited,
+            'installments':self.installments,
+            'user_id':self.user_id
+        }
 
 
 @login_manager.user_loader
