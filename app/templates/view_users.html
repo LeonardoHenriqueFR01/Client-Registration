@@ -7,24 +7,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Clientes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link rel="stylesheet" href="../static/css/view_clientes.css">
 
 </head>
 
 <body>
     
-    {% for user in users %}
+    <div class="container">
 
-        <div class="container">
+        <div class="avista">
 
-            <ul>
-                <li>{{ user.name }}</li>
-                <li>{{ user.name_vehicle }}</li>
-            </ul>
+            <h1>Avista</h1>
+
+            {% for user in users %}
+
+                <div class="users">
+
+                    <ul>
+                        <li>{{ user.name }}</li>
+                        <li>{{ user.name_vehicle }}</li>
+                        <li>{{ user.value_vehicle }}</li>
+                        <li>{{ user.value_prohibited }}</li>
+                    </ul>
+
+                    <ul>
+                        <li></li>
+                    </ul>
+
+                </div>
+
+            {% endfor %}
 
         </div>
 
-    {% endfor %}
+        <div class="financia">
+
+            <h1>Financiamento</h1>
+
+        </div>
+
+    </div>
 
 </body>
 
