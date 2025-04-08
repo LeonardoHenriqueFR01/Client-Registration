@@ -62,7 +62,7 @@ def get_user_login():
         email = request.form.get('email_login')
         password = request.form.get('password_login')
 
-        user_exists = User.query.filter((User.name == name) | (User.email == email)).first()
+        user_exists = User.query.filter(User.name == name, User.email == email).first()
 
         if user_exists and check_password_hash(user_exists.password, password):
             login_user(user_exists)
